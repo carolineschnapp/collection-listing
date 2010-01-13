@@ -31,11 +31,11 @@ We can use the snippet feature to control the markup of our collection listing s
 
 4. Replace that code with this:
 
-    `{% if template == 'list-collections' %}`
-    `{% include 'collection-listing' %}`
-    `{% else %}`
-    `{{ content_for_layout }}`
-    `{% endif %}`
+    {% if template == 'list-collections' %}
+    {% include 'collection-listing' %}
+    {% else %}
+    {{ content_for_layout }}
+    {% endif %}
 
 5. Save.
 
