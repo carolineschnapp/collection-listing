@@ -1,0 +1,34 @@
+<div id="collections-listing">
+
+  <h2>Product Collections</h2>
+  
+  <ul>
+
+  {% for collection in collections %}
+
+  {% unless collection.handle == 'frontpage' %}
+
+    <li class="{{ collection.handle }}-collection">
+    {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
+    
+      <div class="collection">
+        <div class="collection-image">
+          <a href="{{ collection.url }}" title="Browse our {{ collection_title }} collection">{{ collection.products.first.featured_image | product_img_url: 'medium' | img_tag: collection_title }}</a>
+        </div>
+        <div class="collection-description">
+          <h3>
+            <a href="{{ collection.url }}" title="Browse our {{ collection_title }} collection">{{ collection.title }}</a>
+            <small class="hint">{{ collection.all_products_count }}{{ collection.all_products_count | pluralize: 'item', 'items' }}</small>
+          </h3>
+        </div>
+      </div>
+    
+    </li>
+  
+  {% endunless %}
+
+  {% endfor %}
+  
+  </ul>
+
+</div>
