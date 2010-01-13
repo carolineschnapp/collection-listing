@@ -13,8 +13,6 @@ _What if CSS is not enough?_
 
 Where is the template for this /collections page? Can't find it. I need to change the HTML. Help!
 
-### Answer
-
 Fair enough. Read on if you have Liquid skills.
 
 The template that displays the list of collections at /collections is hiding behind the scenes, but we can still pull at it. But first, let's get something out of the way: 
