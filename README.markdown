@@ -1,7 +1,7 @@
 I don't like what I see at the URL /collections, how do I change that?
-======================================================================
+----------------------------------------------------------------------
 
-__Answer__
+### Answer
 
 Use CSS. CSS is a powerful tool that can transform the look and feel - and layout - of any web page.
 
@@ -13,7 +13,7 @@ _What if CSS is not enough?_
 
 Where is the template for this /collections page? Can't find it. I need to change the HTML. Help!
 
-__Answer__
+### Answer
 
 Fair enough. Read on if you have Liquid skills.
 
@@ -29,15 +29,15 @@ We can use the snippet feature to control the markup of our collection listing s
 
 3. Now, open theme.liquid and look for this code:
 
-    {{ content_for_layout }}
+    `{{ content_for_layout }}`
 
 4. Replace that code with this:
 
-    {% if template == 'list-collections' %}
-    {% include 'collection-listing' %}
-    {% else %}
-    {{ content_for_layout }}
-    {% endif %}
+    `{% if template == 'list-collections' %}`
+    `{% include 'collection-listing' %}`
+    `{% else %}`
+    `{{ content_for_layout }}`
+    `{% endif %}`
 
 5. Save.
 
