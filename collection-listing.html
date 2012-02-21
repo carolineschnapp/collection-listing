@@ -29,8 +29,9 @@ margin-right: 0;
     {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
       <div class="collection">
         <div class="collection-image">
-          <a href="{{ collection.url }}" title="Browse our {{ collection_title }} collection">
-            {{ collection.products.first.featured_image | product_img_url: 'medium' | img_tag: collection_title }}
+          <a href="{{ collection.url }}" title="Browse our {{ collection_title }} collection">{% if collection.image %}
+            {{ collection.image.src | collection_img_url: 'medium' | img_tag: collection_title }}{% else %}
+            {{ collection.products.first.featured_image | product_img_url: 'medium' | img_tag: collection_title }}{% endif %}
           </a>
         </div><!-- end of .collection-image -->
         <div class="collection-description">
