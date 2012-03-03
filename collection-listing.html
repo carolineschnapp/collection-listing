@@ -13,7 +13,7 @@ height: 300px;
 margin-right: 30px;
 }
 
-#collections-listing ul li:Last-child {
+#collections-listing ul li.last-in-row {
 margin-right: 0;
 }
 
@@ -25,7 +25,7 @@ margin-right: 0;
   <ul>
   {% for collection in collections %}
   {% unless collection.handle == 'frontpage' %}
-    <li class="{{ collection.handle }}-collection">
+    <li class="{{ collection.handle }}-collection{% cycle '', '', '', ' last-in-row' %}">
     {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
       <div class="collection">
         <div class="collection-image">
